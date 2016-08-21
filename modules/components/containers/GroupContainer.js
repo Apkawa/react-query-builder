@@ -16,16 +16,22 @@ export default (Group) => {
       this.props.actions.setConjunction(this.props.path, conjunction);
     }
 
-    removeSelf() {
+    removeSelf(event) {
       this.props.actions.removeGroup(this.props.path);
+      event.preventDefault();
+      return false;
     }
 
-    addGroup() {
+    addGroup(event) {
       this.props.actions.addGroup(this.props.path);
+      event.preventDefault();
+      return false;
     }
 
-    addRule() {
+    addRule(event) {
       this.props.actions.addRule(this.props.path);
+      event.preventDefault();
+      return false;
     }
 
     render() {
